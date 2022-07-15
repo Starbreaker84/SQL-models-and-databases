@@ -5,10 +5,13 @@
 15.1.</br>
 Создаём таблицу Territories:</br>
 **CREATE TABLE** Territories (TerritoryID nchar(16) *NOT NULL*, TerritoryDescription nchar(50) *NOT NULL*, RegionID int *NOT NULL*);</br>
+</br>
 Задаём Primary Key в таблице Territories:</br>
 **ALTER TABLE** Territories **ADD PRIMARY KEY** (TerritoryID);</br>
+</br>
 Задаём Primary Key в таблице Region:</br>
 **ALTER TABLE** Region **ADD PRIMARY KEY** (RegionID);</br>
+</br>
 Добавляем поля в таблицу Region:</br>
 **INSERT INTO** Region (RegionID, RegionDescription)</br>
 **VALUES** (1, 'Eastern');</br>
@@ -18,8 +21,10 @@
 **VALUES** (3, 'Northern');</br>
 **INSERT INTO** Region (RegionID, RegionDescription)</br>
 **VALUES** (4, 'Southern');</br>
+</br>
 Задаём FOREIGN KEY в таблице Territories:</br>
 **ALTER TABLE** Territories **ADD FOREIGN KEY** (RegionID) **REFERENCES** Region (RegionID);</br>
+</br>
 Добавляем поля в таблицу Territories:</br>
 **INSERT INTO** Territories (TerritoryID, TerritoryDescription, RegionID)</br>
 **VALUES** (01581, 'Westboro', 1);</br>
@@ -29,6 +34,7 @@
 **VALUES** (03049, 'Holis', 3);</br>
 **INSERT INTO** Territories (TerritoryID, TerritoryDescription, RegionID)</br>
 **VALUES** (31406, 'Columbia', 4);</br>
+</br>
 Попытка добавить запись с RegionID, которого нет в таблице Region выдаст ошибку:</br>
 **INSERT INTO** Territories (TerritoryID, TerritoryDescription, RegionID)</br>
 **VALUES** (51602, 'Hoffman', 5);</br>
